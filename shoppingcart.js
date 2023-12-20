@@ -17,9 +17,11 @@ console.log(amount_error);
 
 const list_body = document.querySelector("#list_body");
 
-shopping_form.addEventListener("submit", (e)=> {
+const total = document.querySelector("#total");
+
+function shoppingCart(e) 
+{
     e.preventDefault();
-    // console.log("hi");
     if(product.value === "")
     {
         product_error.innerHTML = "Invalid Product Name";
@@ -38,35 +40,79 @@ shopping_form.addEventListener("submit", (e)=> {
     {
         bodyListadding();
     }
-});
+}
 
 function bodyListadding()
 {
-    const list_body_ul = document.createElement("ul");
+    
+    var list_body_ul = document.createElement("ul");
     list_body_ul.setAttribute("id","list_ul");
 
-    const list_body_li = document.createElement("li");
+    var list_body_li = document.createElement("li");
     list_body_li.setAttribute("id","list_li");
 
-    list_body_li.innerHTML = `<span>${product.value}${amount.value}</span>`  
+    list_body_li.innerHTML = `<span id="prod">${product.value}${amount.value}</span>`  
 
-    const del_btn = document.createElement("button");
+    var del_btn = document.createElement("button");
+    del_btn.setAttribute("id","dust");
     del_btn.innerHTML = `<i class="fa-solid fa-trash-can" id="dust_bin"></i>`
 
-    const total_div = document.createElement("div");
-
-    const total_amount = document.createElement("p");
-    total_amount.innerHTML = "Total"
-
-    const total_amount_value = document.
-
-    total_div.append(total_amount);
-    list_body_ul.append(list_body_li, del_btn, total_div);
+    // var total_amount = document.createElement("p");
+    // total_amount.setAttribute("id","total_amount")
+    // total_amount.innerHTML = `Total ${eveluate(parseInt(amount.value))}`
+    total.innerHTML = `Total ${eveluate(parseInt(amount.value))}`;
+    // total.append(total_amount);
+    list_body_ul.append(list_body_li, del_btn);
     list_body.append(list_body_ul);
 
     del_btn.addEventListener("click", ()=>{
         if(confirm(`Do you want to delete the product ${product.value}`))
         list_body_li.parentElement.remove();
     });
+    product.innerHTML = "";
+    amount.innerHTML = "";
 }
 
+
+function eveluate(x)
+{
+    // console.log(amount.value.length);
+    for(var i=0; i<amount.value.length-1; i++)
+    {
+    var x2 = [];
+    if(amount.value.length == "1")
+    {
+        x2.push(x);
+        console.log(x2)
+    }
+    else if(amount.value.length == "2")
+    {
+        x2.push(x);
+        console.log(x2)
+    }
+    var x3 = x2[i];
+    console.log(x3);
+}
+    // var amt = amount.value;
+    // console.log(amt)
+    // for(var i=0; i<amt.length; i++)
+    // {
+    //     // console.log(amt[i]);
+    //     for(var j=i; j<=amt.length; j++)
+    //     {
+    //         x = amt[i] + amt[j]
+    //     }
+    // }
+    return x3;
+
+        // var value = 0;
+        // for(var i=0; i<=amt.length; i++)
+        // {
+        //     if(amt === 'number')
+        //     {
+        //         value ++;
+        //     }
+        // }
+        // return value;
+}
+shopping_form.addEventListener("submit", shoppingCart);

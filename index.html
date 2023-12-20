@@ -5,32 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Varela+Round&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <h1>Shopping Cart</h1>
     <div class="container">
         <form method="post" name="shoppingcart" id="shoppingcart">
             <div class="product" id="product">
                 <label>Prodcut Name</label>
                 <input type="text" id="product_name" name="product_name" placeholder="product">
-                <span id="product_error"></span>
+                <span class="ln"><hr></span>
             </div>
+            <span id="product_error"></span>
             <div class="amount" id="amount">
                 <label>Amount</label>
                 <input type="number" id="product_amount" name="product_amount" placeholder="amount">
-                <span id="amount_error"></span>
+                <span class="ln"><hr></span>
             </div>
+            <span id="amount_error"></span>
             <div class="btn" id="btn">
-                <input type="submit" value="Add to Cart">
+                <input type="submit" value="Add to Cart" id="cart_btn">
             </div>
         </form>
-        <hr>
+        <hr id="line">
         <div class="listing_product">
             <div class="list_head">
-                <p>Prodcut Name</p>
+                        
+                <p>Product Name</p>
                 <p>Amount</p>
+                <p id="trashes">Trash</p>
             </div>
             <div class="list_body" id="list_body">
+
+            </div>
+            <span class="ln2"><hr></span>
+            <div class="total" id="total">
 
             </div>
         </div>
