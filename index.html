@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <form method="post" name="shoppingcart" id="shoppingcart">
+            <div class="product" id="product">
+                <label>Prodcut Name</label>
+                <input type="text" id="product_name" name="product_name" placeholder="product">
+                <span id="product_error"></span>
+            </div>
+            <div class="amount" id="amount">
+                <label>Amount</label>
+                <input type="number" id="product_amount" name="product_amount" placeholder="amount">
+                <span id="amount_error"></span>
+            </div>
+            <div class="btn" id="btn">
+                <input type="submit" value="Add to Cart">
+            </div>
+        </form>
+        <hr>
+        <div class="listing_product">
+            <div class="list_head">
+                <p>Prodcut Name</p>
+                <p>Amount</p>
+            </div>
+            <div class="list_body" id="list_body">
+
+            </div>
+        </div>
+    </div>
+    <script src="shoppingcart.js"></script>
+</body>
+</html>

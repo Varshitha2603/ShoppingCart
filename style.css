@@ -1,0 +1,27 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    background-color: blue;
+}
+.container
+{
+    display: flex;
+    max-width: 40%;
+    margin: 0 auto;
+    background-color: rgb(245, 245, 247);
+    padding: 2%;
+}
+.container .product
+{
+    display: grid;
+}
+.container .amount
+{
+    display: grid;
+}
+.list_head
+{
+    display: flex;
+    /* gap: 10%; */
+}
